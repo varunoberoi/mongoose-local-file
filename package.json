@@ -1,0 +1,31 @@
+{
+  "name": "mongoose-local-file",
+  "description": "Introduces a new LocalFile schema type, to seamlessly upload Base64 encoded files",
+  "version": "0.0.1",
+  "author": {
+    "name": "Varun Oberoi",
+    "email": "qwert2099@gmail.com"
+  },
+  "homepage": "https://github.com/varunoberoi/mongoose-local-file",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1"
+  },
+  "dependencies": {
+    "async": "^0.8.0",
+    "lodash": "^2.4.1"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/varunoberoi/mongoose-local-file.git"
+  },
+  "keywords": [
+    "mongoose",
+    "file upload",
+    "base64"
+  ]
+}
