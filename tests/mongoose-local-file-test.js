@@ -42,13 +42,14 @@ describe('LocalFileUploader', function() {
         }).save(done);
     });
 
-    var file;
+    var file, user;
     it("Should able to find the instance & it should have url of the file", function(done) {
         User
             .find({})
             .exec(function(err, users) {
                 if (err)
                     return done(err);
+                user = users[0];
                 users[0].photo.should.not.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/i);
                 file = users[0].photo;
                 done();
@@ -60,6 +61,19 @@ describe('LocalFileUploader', function() {
             exists.should.equal(true);
             done();
         });
+    });
+
+    it("Should be able to update", function(done) {
+        User
+            .findByIdAndUpdate(user._id, {
+                name: 'user 2'
+            })
+            .exec(function(err, updated) {
+                if (err)
+                    return done(err);
+                updated.photo.should.equal(user.photo);
+                done();
+            });
     });
 
     after(function(done) {
